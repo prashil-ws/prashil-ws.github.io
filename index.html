@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game Launcher</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f4f4f4;
+    }
+
+    button {
+      font-size: 1.5rem;
+      margin: 1rem;
+      padding: 1rem 2rem;
+      background-color: #8B4513;
+      color: #fff8dc;
+      border: 3px solid #654321;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    dialog {
+      border: none;
+      padding: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    iframe {
+      width: 500px;
+      height: 400px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 1rem;
+      background: #a00;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Select a Game</h1>
+
+  <button onclick="openGame('game1.html')">Open Game 1</button>
+  <button onclick="openGame('game2.html')">Open Game 2</button>
+
+  <dialog id="gameDialog">
+    <button class="close-btn" onclick="closeGame()">✕</button>
+    <iframe id="gameFrame"></iframe>
+  </dialog>
+
+  <script>
+    function openGame(url) {
+      const dialog = document.getElementById("gameDialog");
+      const frame = document.getElementById("gameFrame");
+      frame.src = url;
+      dialog.showModal();
+    }
+
+    function closeGame() {
+      const dialog = document.getElementById("gameDialog");
+      const frame = document.getElementById("gameFrame");
+      frame.src = "";
+      dialog.close();
+    }
+  </script>
+
+</body>
+</html>
