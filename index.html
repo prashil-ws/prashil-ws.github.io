@@ -62,22 +62,7 @@
     <button class="close-btn" onclick="closeGame()">✕</button>
     <iframe id="gameFrame"></iframe>
   </dialog>
-
-  <script>
-    function openGame(url) {
-      const dialog = document.getElementById("gameDialog");
-      const frame = document.getElementById("gameFrame");
-      frame.src = url;
-      dialog.showModal();
-    }
-
-    function closeGame() {
-      const dialog = document.getElementById("gameDialog");
-      const frame = document.getElementById("gameFrame");
-      frame.src = "";
-      dialog.close();
-    }
-  </script>
-
+  
+  <script src="script.js"></script>
 </body>
 </html>
